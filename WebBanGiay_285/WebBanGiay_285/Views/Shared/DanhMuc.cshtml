@@ -1,0 +1,13 @@
+﻿@model List<Model.EF.DanhMuc>
+<div class="h_menu4">
+    <!-- start h_menu4 -->
+    <a class="toggleMenu" href="#">Menu</a>
+    <ul class="nav">
+        @foreach (var it in Model)
+        {
+            <li><a href="/danh-muc/@it.MetaTitle-@it.MaDanhMuc">@it.TenDanhMuc</a></li>
+        }
+
+    </ul>
+    <script type="text/javascript" src="js/nav.js"></script>
+</div><!-- end h_menu4 -->

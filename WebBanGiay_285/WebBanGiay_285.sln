@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBanGiay_285", "WebBanGiay_285\WebBanGiay_285.csproj", "{F3B6A1EC-916E-46D5-861E-08F97BA65E0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{B836D44F-3230-41D2-AFDB-A00BDC1B86FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3B6A1EC-916E-46D5-861E-08F97BA65E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B6A1EC-916E-46D5-861E-08F97BA65E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B6A1EC-916E-46D5-861E-08F97BA65E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B6A1EC-916E-46D5-861E-08F97BA65E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B836D44F-3230-41D2-AFDB-A00BDC1B86FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B836D44F-3230-41D2-AFDB-A00BDC1B86FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B836D44F-3230-41D2-AFDB-A00BDC1B86FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B836D44F-3230-41D2-AFDB-A00BDC1B86FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FE2141A-C48D-4F09-B003-076C8636457F}
+	EndGlobalSection
+EndGlobal

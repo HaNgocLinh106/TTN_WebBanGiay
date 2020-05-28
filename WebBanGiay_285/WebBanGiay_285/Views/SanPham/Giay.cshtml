@@ -1,0 +1,219 @@
+﻿@model Model.EF.Giay
+@*@model List<Model.EF.SanPham>*@
+@{
+    var ListGiaylQ = (List<Model.EF.Giay>)ViewBag.ListGiaylQ;
+    ViewBag.Title = "Giay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var sanPham = (Model.EF.SanPham)ViewBag.SanPham;
+    //var lienQuan = (List<Model.EF.Giay>)ViewBag.LienQuan;
+}
+
+<link rel="stylesheet" href="/Content/css/etalage.css">
+<script src="/Content/js/jquery.etalage.min.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+
+        $('#etalage').etalage({
+            thumb_image_width: 300,
+            thumb_image_height: 400,
+            source_image_width: 900,
+            source_image_height: 1200,
+            show_hint: true,
+            click_callback: function (image_anchor, instance_id) {
+                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+            }
+        });
+
+    });
+</script>
+<style>
+    .textcl {
+        color: white;
+    }
+</style>
+
+<style>
+    .textcl {
+        color: white;
+    }
+</style>
+<div class="container">
+    <div class="single">
+        <div class="col-md-9 top-in-single">
+            <div class="col-md-5 single-top">
+                <ul id="etalage">
+                    <li>
+                       
+                        
+                            <a href="optionallink.html">
+                                <img class="etalage_thumb_image img-responsive" src="/Content/images/@Model.LinkAnh" alt="">
+                                <img class="etalage_source_image img-responsive" src="/Content/images/@Model.LinkAnh" alt="">
+                            </a>
+                        
+
+                    </li>                   
+
+                </ul>
+
+            </div>
+            <div class="col-md-7 single-top-in">
+                <div class="single-para">
+                    <h4>@Model.TenGiay</h4>
+                    <p></p>
+                    <div class="star">
+                        <ul>
+                            <li><i> </i></li>
+                            <li><i> </i></li>
+                            <li><i> </i></li>
+                            <li><i> </i></li>
+                            <li><i> </i></li>
+                        </ul>
+                        <div class="review">
+                            <a href="#"> Xem phản hồi </a>/
+                            <a href="contact.html">  Viết phản hồi</a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <label class="add-to">@Model.DonGia VNĐ</label>
+
+                    <div class="available">
+
+                        <ul>
+
+                            <li>
+                                Size:<select>
+                                    <option>36</option>
+                                    <option>37</option>
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+                                    <option>44</option>
+                                </select>
+                            </li>
+
+                        </ul>
+                        <br>
+                        <ul>
+                            <li>
+                                Màu sắc:
+                                <select>
+                                    <option>Đen</option>
+                                    <option>Đỏ</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <br>
+                        <ul>
+                            <li>Số lượng: <input type="number" min="0"></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="cart ">Thêm vào giỏ hàng</a>
+
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="product-top">
+                @*@foreach (var it in lienQuan)
+                {
+                    var url = "/chi-tiet/" + it.MetaTitle + "-" + it.MaGiay;
+                    <div class="col-md-4 grid-product-in">
+                        <div class=" product-grid">
+                            <a href="single.html"><img class="img-responsive " src="/Content/images/@it.LinkAnh" alt=""></a>
+                            <div class="shoe-in">
+                                <h6><a href="@url">@it.TenGiay</a></h6>
+                                <label>@it.DonGia VNĐ</label>
+                                <a href="@url" class="store">CHI TIẾT</a>
+                            </div>
+                            <b class="plus-on">+</b>
+                        </div>
+
+                    </div>
+                }*@
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="single-bottom">
+                <h4>Mô tả</h4>
+                <ul>
+                    <li>
+
+                        <label for="brand"><span></span> Chất liệu cao cấp</label>
+                    </li>
+                    <li>
+
+                        <label for="brand1"><span></span> Bền đẹp theo thời gian</label>
+                    </li>
+                    <li>
+
+                        <label for="brand2"><span></span> Thiết kế thời trang</label>
+                    </li>
+                    <li>
+
+                        <label for="brand3"><span></span> Kiểu dáng phong cách</label>
+                    </li>
+                    <li>
+
+                        <label for="brand4"><span></span>Độ bền cao</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="single-bottom">
+                <h4>Chất liệu</h4>
+                <ul>
+                    <li>
+
+                        <label for="color"><span></span> Chất vải dày dặn</label>
+                    </li>
+                    <li>
+
+                        <label for="color1"><span></span> Đệm chân Ortholite mềm mại hỗ trợ đi lại cả ngày</label>
+                    </li>
+                    <li>
+
+                        <label for="color2"><span></span> Chi tiết kim loại cao cấp chống rỉ sét</label>
+                    </li>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="single-bottom">
+                <h4>Sản phẩm tương tự</h4>
+                <div class="product-go">
+                    <img class="img-responsive fashion" src="/Content/images/sh.png" alt="">
+                    <div class="grid-product">
+                        <a href="#" class="elit">Giày nike force</a>
+                        <span class=" price-in"><small>500.000đ</small> 400.000đ</span>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="product-go">
+                    <img class="img-responsive fashion" src="/Content/images/sh1.png" alt="">
+                    <div class="grid-product">
+                        <a href="#" class="elit">Giày gymer</a>
+                        <span class=" price-in"><small>550.000đ</small> 400.000đ</span>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="product-go">
+                    <img class="img-responsive fashion" src="/Content/images/sh2.png" alt="">
+                    <div class="grid-product">
+                        <a href="#" class="elit">Giày thời trang</a>
+                        <span class=" price-in"><small>350.000đ</small> 300.000đ</span>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+
+

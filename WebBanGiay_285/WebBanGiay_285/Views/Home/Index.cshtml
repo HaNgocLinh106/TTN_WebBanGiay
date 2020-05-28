@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="banner">
+    <div class="container">
+        <div class="banner-matter">
+            <h1>Hãy để chúng tôi<span>ĐỒNG HÀNH cùng bạn!</h1>
+            <div class="out">
+                <a href="/Home/AllSanPham" class="shop">SHOP</a>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+<div class="content">
+    <div class="sport-your">
+        <!-- requried-jsfiles-for owl -->
+        <link href="/Content/css/owl.carousel.css" rel="stylesheet">
+        <script src="/Content/js/owl.carousel.js"></script>
+        <script>
+									    $(document).ready(function() {
+									      $("#owl-demo").owlCarousel({
+									        items : 5,
+									        lazyLoad : true,
+									        autoPlay : true,
+									        navigation : true,
+									        navigationText :  true,
+									        pagination : false,
+									      });
+									    });
+        </script>
+        <!-- //requried-jsfiles-for owl -->
+        <!-- start content_slider -->
+        <div class="line1">
+
+        </div>
+        <div id="example1">
+            <div id="owl-demo" class="owl-carousel text-center">
+                <div class="item">
+                    <a href="product.html" title="image" rel="title1">
+                        <img class="img-responsive " src="/Content/images/pr3.png" alt="">
+                        <div class="run">
+                            <i> </i>
+                            <p>GYM</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="product.html" title="image" rel="title1">
+                        <img class="img-responsive " src="/Content/images/sh.png" alt="">
+                        <div class="run">
+                            <i class="foot-in"> </i>
+                            <p>NIKE</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="product.html" title="image" rel="title1">
+                        <img class="img-responsive " src="/Content/images/conv1.PNG" alt="">
+                        <div class="run">
+                            <i class="cycling"> </i>
+                            <p>CONVERSE</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="product.html" title="image" rel="title1">
+                        <img class="img-responsive " src="/Content/images/sh2.png" alt="">
+                        <div class="run">
+                            <i class="fitness"> </i>
+                            <p>VANS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="product.html" title="image" rel="title1">
+                        <img class="img-responsive " src="/Content/images/sh1.png" alt="">
+                        <div class="run">
+                            <i class="tennis"> </i>
+                            <p>ADIDAS</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h6 class="your-in">Sản phẩm</h6>
+        <div class="line2">
+
+        </div>
+    </div>
+    <!--//sreen-gallery-cursual---->
+    <div>.</div>
+    <h2 class="text-center">TOP SẢN PHẨM BÁN CHẠY</h2>
+    <div class="content-grids">
+
+        <div class="col-md-4 content-grid">
+            <a href="single.html" class="lot"><img class="img-responsive " src="/Content/images/cv-removebg-preview.png" alt=""></a>
+            <div class="shoe">
+                <p>Giày thể thao Converse cổ cao</p>
+                <label>750.000đ</label>
+                <a href="single.html">Chi tiết</a>
+            </div>
+            <div class="clearfix"> </div>
+            <b class="plus-in"></b>
+        </div>
+        <div class="col-md-4 content-grid">
+            <a href="single.html" class="lot"><img class="img-responsive " src="/Content/images/sh1.png" alt=""></a>
+            <div class="shoe">
+                <p>Giày Nike 3.0</p>
+                <label>600.000đ</label>
+                <a href="single.html">Chi tiết</a>
+            </div>
+            <div class="clearfix"> </div>
+
+        </div>
+        <div class="col-md-4 content-grid">
+            <a href="single.html" class="lot"><img class="img-responsive " src="/Content/images/sh2.png" alt=""></a>
+            <div class="shoe">
+                <p>Giày adidas neo</p>
+                <label>950.000đ</label>
+                <a href="single.html">Chi tiết</a>
+            </div>
+
+            <div class="clearfix"> </div>
+
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+    <!---->
+
+    <div class="content-bottom">
+        <div class="col-md-8 bottom-content">
+            <script src="/Content/js/responsiveslides.min.js"></script>
+            <script>
+						$(function () {
+						  $("#slider").responsiveSlides({
+							auto: true,
+							speed: 500,
+							namespace: "callbacks",
+							pager: false,
+							 nav:true,
+						  });
+						});
+            </script>
+            <div class="slider">
+                <div class="callbacks_container">
+                    <ul class="rslides" id="slider">
+                        <li>
+                            <img src="/Content/images/shop.jpg" alt="">
+
+                        </li>
+                        <li>
+                            <img src="/Content/images/shop2.jpg" alt="">
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="london">
+                    <h5>Cửa hàng của chúng tôi</h5>
+                    <p>236 Hoàng Quốc Việt</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 bottom-grid">
+            <h4>Phản hồi của khách hàng</h4>
+            <div class="news">
+
+                <div class="foot">
+                    <label>Phượng Red</label>
+                    <ul class="eye ">
+                        <li><span><i> </i>315</span></li>
+                        <li><a href="#"><i class="comment"> </i> 3</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="news">
+
+                <p>Shop phục vụ chuyên nghiệp. Nhân viên tư vấn nhiệt tình. </p>
+                <div class="foot">
+                    <label>Tiến Mạnh</label>
+                    <ul class="eye ">
+                        <li><span><i> </i>300</span></li>
+                        <li><a href="#"><i class="comment"> </i> 3</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="news">
+
+                <p>Giày bền và đẹp. Giá cả hợp lý. </p>
+                <div class="foot">
+                    <label>Hà Linh</label>
+                    <ul class="eye ">
+                        <li><span><i> </i>360</span></li>
+                        <li><a href="#"><i class="comment"> </i> 3</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="news">
+
+                <p>Rất hài lòng!</p>
+                <div class="foot">
+                    <label>Sơn</label>
+                    <ul class="eye ">
+                        <li><span><i> </i>260</span></li>
+                        <li><a href="#"><i class="comment"> </i> 3</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="news">
+
+                <p>Giày rất đẹp! Sẽ tiếp tục ủng hộ shop</p>
+
+                <div class="foot">
+
+                    <ul class="eye ">
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <a href="contact.html" class="view">Gửi phản hồi cho chúng tôi!</a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+
+

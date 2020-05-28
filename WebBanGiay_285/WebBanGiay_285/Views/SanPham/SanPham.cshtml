@@ -1,0 +1,38 @@
+﻿@model List<Model.EF.SanPham>
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+        .textcl {
+            color: white;
+        }
+    </style>
+    <div class="product-grids">
+        <div class="container">
+            <div class="product-top">
+                @foreach (var it in Model)
+                {
+                    var url = "/chi-tiet-san-pham/" + it.MetaTitle + "-" + it.MaSanPham;
+                    <div class="col-md-4 grid-product-in">
+                        <div class=" product-grid">
+                            <a href="@url"><img class="img-responsive " src="/Content/images/@it.MoTa" alt=""></a>
+                            <div class="shoe-in">
+                                <h6><a href="single.html">@it.TenSanPham </a></h6>
+                                <label>@it.DonGia VNĐ</label>
+                                <a href="@url" class="store">CHI TIẾT</a>
+                            </div>
+
+                            <b class="plus-on">+</b>
+                        </div>
+                    </div>
+                }
+
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+
+

@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang chủ Sport Shop</title>
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/Content/js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sport Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <style>
+        .textcl {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!--header-->
+    <div class="line">
+
+    </div>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="/Content/images/logo.png" alt=""></a>
+        </div>
+        <div class="header-top">
+            <div class="header-grid">
+                <ul class="header-in">
+                    <li><a href="account.html">Đăng nhập   </a> </li>
+                    <li><a href="register.html">Đăng ký   </a> </li>
+                </ul>
+                <div class="search-box">
+                    <div id="sb-search" class="sb-search">
+                        <form>
+                            <input class="sb-search-input" placeholder="Nhập thông tin cần tìm..." type="search" name="search" id="search">
+                            <input class="sb-search-submit" type="submit" value="">
+                            <span class="sb-icon-search"> </span>
+                        </form>
+                    </div>
+                </div>
+                <!-- search-scripts -->
+                <script src="/Content/js/classie.js"></script>
+                <script src="/Content/js/uisearch.js"></script>
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+                <!-- //search-scripts -->
+                <div class="online">
+                    <a href="Cart.html">Giỏ hàng</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="header-bottom">
+                @{Html.RenderAction("DanhMuc","SanPham");}
+                <ul class="header-bottom-in">
+                    <li class="textcl">
+                        Liên hệ: (+84)869668106
+
+                    </li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!---->
+
+    @RenderBody()
+    <!---->
+    <!--footer-->
+    <div class="footer">
+        <div class="col-md-3 footer-left left-footer">
+            <h4>Cửa hàng</h4>
+            <div class="run-top top-run">
+                <ul class="run-grid">
+                    <li><a href="#">(+84) 869668106</a></li>
+                    <li><a href="#">236 Hoàng Quốc Việt, Từ Liêm, Hà Nội</a></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-md-3 footer-left left-footer">
+            <h4>Đóng góp ý kiến</h4>
+            <div class="run-top top-run">
+                <ul class="run-grid">
+                    <li><a href="contact.html">Viết phản hồi</a></li>
+                    <li><a href="#">Gọi điện</a></li>
+                    <li><a href="">(+84)869668106</a></li>
+                </ul>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-md-2 footer-left left-footer">
+            <h4>Tài khoản</h4>
+            <ul class="run-grid-in">
+                <li><a href="account.html">Đăng nhập</a></li>
+                <li><a href="register.html">Đăng ký</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-4 footer-left left-footer">
+            <h4>Mạng xã hội</h4>
+            <div class="letter">
+                <ul class="social-in">
+                    <li><a href="#"><i> </i></a></li>
+                    <li><a href="#"><i class="youtube"> </i></a></li>
+                    <li><a href="#"><i class="facebook"> </i></a></li>
+                    <li><a href="#"><i class="twitter"> </i></a></li>
+                </ul>
+
+
+                <h6>Hãy theo dõi chúng tôi!</h6>
+
+                <p class="footer-class"> © 2020 Sport Shop |  <a href="" target="_blank">Ha Noi, Viet Nam</a> </p>
+            </div>
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</body>
+</html>
+
