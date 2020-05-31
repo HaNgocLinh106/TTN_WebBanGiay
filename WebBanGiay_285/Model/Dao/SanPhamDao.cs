@@ -14,13 +14,18 @@ namespace Model.Dao
         {
             db = new WebGiay();
         }
-        public List<SanPham> ListSP(int sp)
+        public List<SanPham> ListSP(int top)
         {
-            return db.SanPhams.ToList();
+            return db.SanPhams.Take(top).ToList();
         }
         public SanPham ViewDetail( long id)
         {
             return db.SanPhams.Find(id);
         }
+        public List<Giay> TimKiemSP(string TenGiay)
+        {
+            return db.Giays.Where(x => x.TenGiay == TenGiay).ToList();
+        }
+
     }
 }

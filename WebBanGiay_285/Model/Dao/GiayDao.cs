@@ -14,9 +14,12 @@ namespace Model.Dao
         {
             db = new WebGiay();
         }
-        public Giay ViewDetail(long MaGiay)
+        public Giay ViewDetail(long MaSP)
         {
-            return db.Giays.Find(MaGiay);
+            //return db.Giays.Find(MaGiay);
+            var sp = db.SanPhams.Find(MaSP);
+            //return db.Giays.Where(x => x.MaSanPham == sp.MaSanPham);
+            return db.Giays.FirstOrDefault(x => x.MaSanPham == sp.MaSanPham);
         }
         public List<Giay> LienQuan(long MG)
         {
@@ -26,8 +29,9 @@ namespace Model.Dao
 
         public List<Giay> ListGiaylQ(long MaSP)
         {
-            var sp = db.Giays.Find(MaSP);
-            return db.Giays.Where(x => x.MaSanPham != MaSP  && x.MaSanPham == sp.MaSanPham).ToList();
+            var sp = db.SanPhams.Find(MaSP);
+            return db.Giays.Where(x => x.MaSanPham == sp.MaSanPham).ToList();
         }
+
     }
 }

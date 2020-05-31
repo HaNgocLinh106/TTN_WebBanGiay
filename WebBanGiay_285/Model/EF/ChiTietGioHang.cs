@@ -18,7 +18,7 @@ namespace Model.EF
 
         public int? DonGia { get; set; }
 
-        public int? SoLuong { get; set; }
+        public long? SoLuong { get; set; }
 
         public virtual Giay Giay { get; set; }
 

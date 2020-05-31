@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebBanGiay_285.Models.LoginModel
+
+    <div class="container">
+       
+            <div class="account">
+                <h2>Tài khoản</h2>
+                <div class="account-pass">
+                    <div class="col-md-7 account-top">
+                        @using (Html.BeginForm("Login", "User", FormMethod.Post))
+                        {
+                            @Html.ValidationSummary(false," ", "error");
+                            <form>
+                               
+                                <div>
+                                    <span>Tên đăng nhập</span>
+                                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @autofocus = "autofocus" } )
+                                </div>
+                                <div>
+                                    <span>Mật khẩu</span>
+                                    @Html.PasswordFor(model => model.Pass, new { @class = "form-control" })
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-success btn-block"> Đăng nhập</button>
+                            </form>
+                        }
+                    </div>
+                    <div class="col-md-5 left-account ">
+                        <a href="single.html"><img class="img-responsive " src="~/Content/images/ac.png" alt=""></a>
+                        
+                        <div class="five">
+                            <h1>Sport SHOP</h1>
+                        </div>
+                        <a href="/dang-ky" class="create">Tạo tài khoản</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+
+    </div>

@@ -24,6 +24,10 @@ namespace Model.Dao
         {
             return db.SanPhams.Find(MaDanhMuc);
         }
+        public DanhMuc DanhMucSP(long id)
+        {
+            return db.DanhMucs.Find(id);
+        }
         public List<SanPham> ListAllSP(long MaDanhMuc)
         {
             var sp = db.SanPhams.Find(MaDanhMuc);

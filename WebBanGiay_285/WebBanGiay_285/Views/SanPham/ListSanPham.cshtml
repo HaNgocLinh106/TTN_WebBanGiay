@@ -1,0 +1,22 @@
+﻿@model List<Model.EF.SanPham>
+<div class="product-top">
+    @foreach (var it in Model)
+    {
+        var url = "/chi-tiet/" + it.MetaTitle + "-" + it.MaSanPham;
+        <div class="col-md-4 grid-product-in">
+            <div class=" product-grid">
+                <a href="single.html"><img class="img-responsive " src="/Content/images/@it.MoTa" alt=""></a>
+                <div class="shoe-in">
+                    <h6><a href="">@it.TenSanPham</a></h6>
+                    <label>@it.DonGia VNĐ</label>
+                    <a href="" class="store">CHI TIẾT</a>
+                </div>
+                <b class="plus-on">+</b>
+            </div>
+
+        </div>
+    }
+
+    <div class="clearfix"> </div>
+</div>
+

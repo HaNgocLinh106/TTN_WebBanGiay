@@ -15,6 +15,8 @@ namespace WebBanGiay_285.Controllers
         {
             return View();
         }
+
+      
         [ChildActionOnly]
         public PartialViewResult DanhMuc()
         {
@@ -22,23 +24,30 @@ namespace WebBanGiay_285.Controllers
             return PartialView(model);
         }
 
+        public PartialViewResult ListSanPham()
+        {
+            var model = new SanPhamDao().ListSP(3);
+            return PartialView(model);
+        }
+
         public ActionResult SanPham(long MaDanhMuc)
         {
-            var model = new DanhMucDao().ListAllSP(MaDanhMuc);
-            return View(model);
+            var danhmuc = new DanhMucDao().DanhMucSP(MaDanhMuc);
+            ViewBag.SanPham = new DanhMucDao().ListAllSP(danhmuc.MaDanhMuc);
+            return View(MaDanhMuc);
         }
-        //public ActionResult Giay(long MaSanPham)
-        //{
-        //    var sp = new GiayDao().ViewDetail(MaSanPham);
-        //    ViewBag.SanPham = new SanPhamDao().ViewDetail(sp.MaSanPham.Value);
-        //    ViewBag.LienQuan = new GiayDao().ListGiaylQ(MaSanPham);
-        //    return View(sp);
-        //}
+       
         public ActionResult Giay(long MaSanPham)
         {
-            var model = new GiayDao().ViewDetail(MaSanPham);
-            ViewBag.ListGiaylQ = new GiayDao().ListGiaylQ(MaSanPham);
-            return View(model);
+            //var model = new GiayDao().ViewDetail(MaSanPham);     
+            //var model = new GiayDao().ViewDetail(MaSanPham);
+            //ViewBag.ListGiaylQ = new GiayDao().ListGiaylQ(MaSanPham);
+            
+            var product = new SanPhamDao().ViewDetail(MaSanPham);
+            ViewBag.GiayOD = new GiayDao().ViewDetail(product.MaSanPham);
+            ViewBag.Giay = new GiayDao().ListGiaylQ(product.MaSanPham);
+
+            return View(MaSanPham);
         }
     }
 }

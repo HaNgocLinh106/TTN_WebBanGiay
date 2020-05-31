@@ -86,5 +86,7 @@ namespace Model.EF
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
         }
+
+       
     }
 }

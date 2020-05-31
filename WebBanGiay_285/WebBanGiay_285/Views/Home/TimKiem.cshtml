@@ -1,10 +1,8 @@
-﻿@*@model List<Model.EF.SanPham>*@
-    @using Model.EF
-
+﻿@using Model.EF;
+@model IEnumerable<Giay>
 @{
-    ViewBag.Title = "SanPham";
+    ViewBag.Title = "TimKiem";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var sanpham = (List<Model.EF.SanPham>)ViewBag.SanPham;
 }
 
 <style>
@@ -15,15 +13,15 @@
 <div class="product-grids">
     <div class="container">
         <div class="product-top">
-            @foreach (var it in sanpham)
+            @foreach (var it in Model)
             {
                 var url = "/chi-tiet-san-pham/" + it.MetaTitle + "-" + it.MaSanPham;
                 <div class="col-md-4 grid-product-in">
                     <div class=" product-grid">
-                        <a href="@url"><img class="img-responsive " src="/Content/images/@it.MoTa" alt=""></a>
+                        <a href="@url"><img class="img-responsive " src="/Content/images/@it.LinkAnh" alt=""></a>
                         <div class="shoe-in">
-                            <h6><a href="single.html">@it.TenSanPham </a></h6>
-                            <label>@it.DonGia VNĐ</label>
+                            <h6><a href="@url">@it.TenGiay</a></h6>
+                            <label>@it.DonGia</label>
                             <a href="@url" class="store">CHI TIẾT</a>
                         </div>
 
@@ -34,7 +32,6 @@
 
             <div class="clearfix"> </div>
         </div>
-
     </div>
 </div>
 

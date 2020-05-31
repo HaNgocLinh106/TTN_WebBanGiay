@@ -1,0 +1,83 @@
+﻿@model List<WebBanGiay_285.Models.GioHangIT>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+
+    <script src="/Content/js/controller/GioHangController.js"></script>
+}
+
+<br />
+<br />
+<br />
+<h2 class="text-center">Giỏ hàng của bạn</h2>
+<br />
+<br />
+<div class="container">
+    @if (Model.Count > 0)
+    {
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Tên sản phẩm</th>
+                    <th style="width:10%">Giá</th>
+                    <th style="width:8%">Số lượng</th>
+                    <th style="width:22%" class="text-center">Thành tiền</th>
+                    <th style="width:10%"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var it in Model)
+                {
+                    <tr>
+
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs">
+                                    <img src="/Content/images/@it.Giay.LinkAnh" alt="" class="img-responsive" width="100">
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin">@it.Giay.TenGiay</h4>
+                                    <p>Size @it.Giay.Size</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Price">@it.Giay.DonGia đ</td>
+                        <td data-th="Quantity">
+                            <input class="form-control text-center" data-id="@it.Giay.MaGiay" value="@it.SoLuong" type="text"  >
+                        </td>
+                        <td data-th="Subtotal" class="text-center">@(it.Giay.DonGia * it.SoLuong) VNĐ</td>
+
+                        <td><a href="#" data-id="@it.Giay.MaGiay" class="btn-delete">Xoá</a></td>
+                    </tr>
+                }
+
+
+            </tbody>
+            <tfoot>
+                <tr class="visible-xs">
+                 
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/Home/AllSanPham" id="btnContinue" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                        <a href="" id="btnUpdate" class="btn btn-warning"><i class="fa fa-angle-left"></i> Cập nhật</a>
+                        <a href="" id="btnDeleteAll" class="btn btn-warning"><i class="fa fa-angle-left"></i> Xóa giỏ hàng</a>
+                    </td>
+
+                    <td colspan="2" class="hidden-xs"> </td>
+                    
+                    <td>
+                        <a href="/GioHang/ThanhToan" id="btnPayment" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+    else
+    {
+        <span class="alert alert-danger">Chưa có sản phẩm nào trong giỏ hàng</span> <br />
+    }
+</div>
+

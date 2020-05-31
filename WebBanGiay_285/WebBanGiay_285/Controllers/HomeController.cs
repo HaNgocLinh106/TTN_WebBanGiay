@@ -1,4 +1,5 @@
-﻿using Model.EF;
+﻿using Model.Dao;
+using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,13 @@ namespace WebBanGiay_285.Controllers
         {
             var model = db.SanPhams.ToList();
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult TimKiem(string search)
+        {
+            var model = new SanPhamDao().TimKiemSP(search);
+            return View( model);
         }
     }
 }

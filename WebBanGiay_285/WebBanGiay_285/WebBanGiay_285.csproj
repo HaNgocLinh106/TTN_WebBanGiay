@@ -127,11 +127,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHangIT.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +217,7 @@
     <Content Include="Content\images\vi.jpg" />
     <Content Include="Content\images\zoom.png" />
     <Content Include="Content\js\classie.js" />
+    <Content Include="Content\js\controller\GioHangController.js" />
     <Content Include="Content\js\core\bootstrap-material-design.min.js" />
     <Content Include="Content\js\core\jquery.min.js" />
     <Content Include="Content\js\core\popper.min.js" />
@@ -523,17 +531,24 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\DanhMuc.cshtml" />
     <Content Include="Views\SanPham\SanPham.cshtml" />
     <Content Include="Views\SanPham\Giay.cshtml" />
     <Content Include="Views\Home\AllSanPham.cshtml" />
+    <Content Include="Views\SanPham\ListSanPham.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
+    <Content Include="Views\GioHang\ThanhCong.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Home\TimKiem.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\TaiKhoanKhachHang.cshtml" />
+    <Content Include="Views\User\TaiKhoan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

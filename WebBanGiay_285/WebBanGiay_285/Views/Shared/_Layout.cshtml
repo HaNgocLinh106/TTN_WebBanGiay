@@ -30,17 +30,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <div class="header">
         <div class="logo">
-            <a href="index.html"><img src="/Content/images/logo.png" alt=""></a>
+            <a href="/Home/Index"><img src="/Content/images/logo.png" alt=""></a>
         </div>
         <div class="header-top">
             <div class="header-grid">
                 <ul class="header-in">
-                    <li><a href="account.html">Đăng nhập   </a> </li>
-                    <li><a href="register.html">Đăng ký   </a> </li>
+                    <li><a href="/dang-nhap">Đăng nhập   </a> </li>
+                    <li><a href="/dang-ky">Đăng ký   </a> </li>
                 </ul>
                 <div class="search-box">
                     <div id="sb-search" class="sb-search">
-                        <form>
+                        <form method="post" action="/Home/TimKiem">
                             <input class="sb-search-input" placeholder="Nhập thông tin cần tìm..." type="search" name="search" id="search">
                             <input class="sb-search-submit" type="submit" value="">
                             <span class="sb-icon-search"> </span>
@@ -55,12 +55,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </script>
                 <!-- //search-scripts -->
                 <div class="online">
-                    <a href="Cart.html">Giỏ hàng</a>
+                    <a href="/GioHang/Index">Giỏ hàng</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="header-bottom">
-                @{Html.RenderAction("DanhMuc","SanPham");}
+                @{Html.RenderAction("DanhMuc", "SanPham");}
                 <ul class="header-bottom-in">
                     <li class="textcl">
                         Liên hệ: (+84)869668106
@@ -128,6 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="clearfix"> </div>
     </div>
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>
 

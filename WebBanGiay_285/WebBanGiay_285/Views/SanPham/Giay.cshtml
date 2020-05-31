@@ -1,12 +1,14 @@
-﻿@model Model.EF.Giay
+﻿@using Model.EF
 @*@model List<Model.EF.SanPham>*@
 @{
-    var ListGiaylQ = (List<Model.EF.Giay>)ViewBag.ListGiaylQ;
+   
     ViewBag.Title = "Giay";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    //var sanPham = (Model.EF.SanPham)ViewBag.SanPham;
-    //var lienQuan = (List<Model.EF.Giay>)ViewBag.LienQuan;
+   
+    var giayOd = (Model.EF.Giay)ViewBag.GiayOD;
+    var giay = (List<Model.EF.Giay>)ViewBag.Giay;
 }
+
 
 <link rel="stylesheet" href="/Content/css/etalage.css">
 <script src="/Content/js/jquery.etalage.min.js"></script>
@@ -40,25 +42,27 @@
 <div class="container">
     <div class="single">
         <div class="col-md-9 top-in-single">
+
             <div class="col-md-5 single-top">
                 <ul id="etalage">
-                    <li>
-                       
-                        
-                            <a href="optionallink.html">
-                                <img class="etalage_thumb_image img-responsive" src="/Content/images/@Model.LinkAnh" alt="">
-                                <img class="etalage_source_image img-responsive" src="/Content/images/@Model.LinkAnh" alt="">
-                            </a>
-                        
 
-                    </li>                   
+                    @foreach (var it in giay)
+                    {
+                        <li>
+                            <a href="">
+                                <img class="etalage_thumb_image img-responsive" src="~/Content/images/@it.LinkAnh" alt="">
+                                <img class="etalage_source_image img-responsive" src="~/Content/images/@it.LinkAnh" alt="">
+                            </a>
+                        </li>
+                    }
 
                 </ul>
 
             </div>
             <div class="col-md-7 single-top-in">
+
                 <div class="single-para">
-                    <h4>@Model.TenGiay</h4>
+                    <h4>@giayOd.TenGiay</h4>
                     <p></p>
                     <div class="star">
                         <ul>
@@ -75,23 +79,22 @@
                         <div class="clearfix"> </div>
                     </div>
 
-                    <label class="add-to">@Model.DonGia VNĐ</label>
+                    <label class="add-to">@giayOd.DonGia VNĐ</label>
 
                     <div class="available">
 
                         <ul>
 
                             <li>
-                                Size:<select>
-                                    <option>36</option>
-                                    <option>37</option>
-                                    <option>38</option>
-                                    <option>39</option>
-                                    <option>40</option>
-                                    <option>41</option>
-                                    <option>42</option>
-                                    <option>43</option>
-                                    <option>44</option>
+                                Size:
+
+
+                                <select>
+                                    @foreach (var it in giay)
+                                    {
+                                        <option>@it.Size</option>
+                                    }
+
                                 </select>
                             </li>
 
@@ -100,43 +103,35 @@
                         <ul>
                             <li>
                                 Màu sắc:
+
+
                                 <select>
-                                    <option>Đen</option>
-                                    <option>Đỏ</option>
+                                    @foreach (var it in giay)
+                                    {
+                                        <option>@it.Mau</option>
+                                    }
+
                                 </select>
+
+
                             </li>
                         </ul>
                         <br>
                         <ul>
-                            <li>Số lượng: <input type="number" min="0"></li>
+                            <li>Số lượng: <input type="number" min="0" value=""></li>
                         </ul>
                     </div>
 
-                    <a href="#" class="cart ">Thêm vào giỏ hàng</a>
+                    @*<a href="/them-gio-hang/@giayOd.MaGiay-@giayOd.SoLuong" class="cart ">Thêm vào giỏ hàng</a>*@
+                    <a href="/them-gio-hang?MaGiay=@giayOd.MaGiay&SoLuong=1" class="cart ">Thêm vào giỏ hàng</a>
 
                 </div>
             </div>
+        
             <div class="clearfix"> </div>
-            <div class="product-top">
-                @*@foreach (var it in lienQuan)
-                {
-                    var url = "/chi-tiet/" + it.MetaTitle + "-" + it.MaGiay;
-                    <div class="col-md-4 grid-product-in">
-                        <div class=" product-grid">
-                            <a href="single.html"><img class="img-responsive " src="/Content/images/@it.LinkAnh" alt=""></a>
-                            <div class="shoe-in">
-                                <h6><a href="@url">@it.TenGiay</a></h6>
-                                <label>@it.DonGia VNĐ</label>
-                                <a href="@url" class="store">CHI TIẾT</a>
-                            </div>
-                            <b class="plus-on">+</b>
-                        </div>
 
-                    </div>
-                }*@
+            @{Html.RenderAction("ListSanPham", "SanPham");}
 
-                <div class="clearfix"> </div>
-            </div>
         </div>
         <div class="col-md-3">
             <div class="single-bottom">
